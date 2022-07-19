@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(CharacterController))]
 public class TwinStickMovement : MonoBehaviour
 {
+    public S_Shoot shoot;
 	#region Data Types
 	[Header("Player Stats")]
 	[SerializeField] public float playerSpeed = 10f;
@@ -137,8 +138,8 @@ public class TwinStickMovement : MonoBehaviour
 		if (Time.time >= NextTimetoFire)
 		{
 			NextTimetoFire = Time.time + 1f / fireRate;
-			S_Shoot shooting = GetComponent<S_Shoot>();
-			shooting.Shoot();
+			shoot = GameObject.Find("Gun").GetComponent<S_Shoot>();
+			shoot.Shoot();
 		}
 	}
 	IEnumerator DodgeTiming (float delay)
