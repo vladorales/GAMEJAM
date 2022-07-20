@@ -26,7 +26,7 @@ public class EnemyLife : MonoBehaviour
 		{
 			int randomNum = Random.Range(0,items.Count);
 			Debug.Log(randomNum);
-			Instantiate(items[randomNum],transform.position,Quaternion.identity);
+			//Instantiate(items[randomNum],transform.position,Quaternion.identity);
 			Instantiate(Explode,transform.position, transform.rotation);
 			Destroy(gameObject);
 		}

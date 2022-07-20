@@ -165,7 +165,7 @@ public class TwinStickMovement : MonoBehaviour
 			if (isGamepad)
 			{
 			
-				if(MathF.Abs(aim.x) > controllerDeadzone || MathF.Abs(aim.y)> controllerDeadzone)
+				if(Mathf.Abs(aim.x) > controllerDeadzone || Mathf.Abs(aim.y)> controllerDeadzone)
 				{
 					Vector3 playerDirection = Vector3.right * aim.x + Vector3.forward * aim.y;
 					if (playerDirection.sqrMagnitude > 0.0f)

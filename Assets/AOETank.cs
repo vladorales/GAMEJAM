@@ -15,4 +15,12 @@ public class AOETank : MonoBehaviour
     {
         Destroy(gameObject, 0.4f);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Enemy")
+        {
+            Destroy(other);
+        }
+    }
 }

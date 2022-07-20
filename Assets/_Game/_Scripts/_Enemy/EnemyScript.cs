@@ -6,11 +6,11 @@ using UnityEngine.AI;
 public class EnemyScript : MonoBehaviour
 {
 	[Header("AgentStats")]
-	Transform target;
-	NavMeshAgent agent;
+	public Transform target;
+	public NavMeshAgent agent;
 
 	[Header("Shoot")]
-	ShootPlayer shtPlayer;
+	public ShootPlayer shtPlayer;
 	bool agentStopped;
 	public float fireRate = 1f;
 	public float fasterFireRate = 1f;
