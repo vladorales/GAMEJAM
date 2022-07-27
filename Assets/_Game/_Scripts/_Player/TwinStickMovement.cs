@@ -129,6 +129,15 @@ public class TwinStickMovement : MonoBehaviour
 		{		
 			Shoot();
 		}
+
+        if (Mouse.current.rightButton.isPressed)
+        {
+            shoot.tripShot = true;
+        }
+        else
+        {
+            shoot.tripShot = false;
+        }
 	}
 
 	

@@ -20,7 +20,7 @@ public class AOETank : MonoBehaviour
     {
         if(other.tag == "Enemy")
         {
-            Destroy(other);
+            Destroy(other.gameObject);
         }
     }
 }
