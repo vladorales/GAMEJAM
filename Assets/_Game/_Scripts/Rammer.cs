@@ -17,7 +17,8 @@ public class Rammer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        target = GameObject.Find("Player Variant").transform;
+
     }
 
     // Update is called once per frame
