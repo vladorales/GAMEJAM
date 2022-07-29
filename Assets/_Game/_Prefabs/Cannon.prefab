@@ -29,7 +29,6 @@ Transform:
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: -0.02}
   m_LocalScale: {x: 1, y: 0.19598, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5756500956274065487}
   m_RootOrder: 0
@@ -127,7 +126,6 @@ Transform:
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0.723}
   m_LocalScale: {x: 0.71716, y: 0.8444326, z: 0.71716}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5756500956274065487}
   m_RootOrder: 1
@@ -223,7 +221,6 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.251, y: 0, z: 1.073}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5756500954803285906}
   - {fileID: 5756500955343097272}
@@ -243,6 +240,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0e664073395eb94d899bc9f5b1d3fc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectile: {fileID: -2760480838960902359, guid: a78f67cfbd1a33443887d2f4431bae2f,
+    type: 3}
+  projSpeed: 20
+  barrel: {fileID: 1156803256248159873}
 --- !u!1 &6496938764483685470
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,7 +270,6 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1.799}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5756500956274065487}
   m_RootOrder: 2

@@ -105,6 +105,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4926519662497705037}
+  - component: {fileID: 9196774254408130766}
   m_Layer: 3
   m_Name: Shield
   m_TagString: Untagged
@@ -128,98 +129,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &5807356961272769573
-PrefabInstance:
+--- !u!114 &9196774254408130766
+MonoBehaviour:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 4926519662497705037}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 3aca47ecdd59670448b6dab8f363977c,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 3aca47ecdd59670448b6dab8f363977c,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 16.155901
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 3aca47ecdd59670448b6dab8f363977c,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 16.155901
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 3aca47ecdd59670448b6dab8f363977c,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 16.155901
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 3aca47ecdd59670448b6dab8f363977c,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 3aca47ecdd59670448b6dab8f363977c,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 3aca47ecdd59670448b6dab8f363977c,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 3aca47ecdd59670448b6dab8f363977c,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 3aca47ecdd59670448b6dab8f363977c,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 3aca47ecdd59670448b6dab8f363977c,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 3aca47ecdd59670448b6dab8f363977c,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 3aca47ecdd59670448b6dab8f363977c,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 3aca47ecdd59670448b6dab8f363977c,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 3aca47ecdd59670448b6dab8f363977c,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -7511558181221131132, guid: 3aca47ecdd59670448b6dab8f363977c,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 206576033207ce841a9e00852085010e, type: 2}
-    - target: {fileID: 919132149155446097, guid: 3aca47ecdd59670448b6dab8f363977c,
-        type: 3}
-      propertyPath: m_Name
-      value: SM_Shield
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 3aca47ecdd59670448b6dab8f363977c, type: 3}
---- !u!4 &6277271442185997262 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3aca47ecdd59670448b6dab8f363977c,
-    type: 3}
-  m_PrefabInstance: {fileID: 5807356961272769573}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4926519662497705036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94a2f1abbfa7c8847ae9256331b2a965, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TankAOE: {fileID: -2953625381851177465, guid: 6bb786769cd958348ab1f29141aef6fd,
+    type: 3}
+  barrel: {fileID: 0}
+  player: {fileID: 0}
