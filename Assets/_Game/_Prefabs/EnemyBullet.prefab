@@ -14,10 +14,10 @@ GameObject:
   - component: {fileID: 958599361990824590}
   - component: {fileID: 6106353904431737436}
   - component: {fileID: 6068179659730002889}
-  - component: {fileID: 9112804276878089250}
+  - component: {fileID: -3463889308109996528}
   m_Layer: 3
-  m_Name: Sphere
-  m_TagString: bullet
+  m_Name: EnemyBullet
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95,11 +95,11 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 958599361990824591}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.6
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 9.53
+  m_Center: {x: 0, y: -0.13467872, z: 0}
 --- !u!54 &6106353904431737436
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -188,8 +188,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1.254902, g: 0, b: 0, a: 1}
-      key1: {r: 3.017497, g: 0.8401659, b: 0, a: 1}
+      key0: {r: 0.643335, g: 0, b: 0.764151, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 1}
       key2: {r: 1, g: 0, b: 0, a: 1}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -197,7 +197,7 @@ TrailRenderer:
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
       ctime0: 0
-      ctime1: 31997
+      ctime1: 65342
       ctime2: 65342
       ctime3: 0
       ctime4: 0
@@ -205,7 +205,7 @@ TrailRenderer:
       ctime6: 0
       ctime7: 0
       atime0: 0
-      atime1: 31611
+      atime1: 65535
       atime2: 65535
       atime3: 0
       atime4: 0
@@ -213,8 +213,8 @@ TrailRenderer:
       atime6: 0
       atime7: 0
       m_Mode: 0
-      m_NumColorKeys: 3
-      m_NumAlphaKeys: 3
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
@@ -224,7 +224,7 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
---- !u!114 &9112804276878089250
+--- !u!114 &-3463889308109996528
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -233,10 +233,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 958599361990824591}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 386a191d40b2b9144afdfda6cf7bb12a, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f064fbba208e5c44824507122863c56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmgAmnt: 1
+  dmgAmnt: 2
 --- !u!1001 &126740246479267458
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -318,7 +318,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 40bdb1f5a99fb6140a08e7612b8f44ef, type: 2}
+      objectReference: {fileID: 2100000, guid: 90be24af63165a34aa06d1418cfe2b2e, type: 2}
     - target: {fileID: 919132149155446097, guid: ed6995e7a84495c49abd57f319ab45f0,
         type: 3}
       propertyPath: m_Name

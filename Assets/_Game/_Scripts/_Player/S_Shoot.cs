@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class S_Shoot : MonoBehaviour
 {
@@ -19,17 +20,30 @@ public class S_Shoot : MonoBehaviour
 	public AudioSource clip;
 	public AudioSource heavyClip;
 
-	// Update is called once per frame
-	void Update()
+    public float fireRate = 1f;
+    private float NextTimetoFire = 1f;
+
+    // Update is called once per frame
+    void Update()
 	{
-		//update bullet count
-		//
-		
-	}
+        //update bullet count
+        //
+        if (Mouse.current.leftButton.wasPressedThisFrame)
+        {
+            StartShoot();
+        }
+    }
 
-	
+    private void StartShoot()
+    {
+        if (Time.time >= NextTimetoFire)
+        {
+            NextTimetoFire = Time.time + 1f / fireRate;
+            Shoot();
+        }
+    }
 
-	private IEnumerator DestroyBulletAfterTime(GameObject bullet, float delay)
+    private IEnumerator DestroyBulletAfterTime(GameObject bullet, float delay)
 	{
 		yield return new WaitForSeconds(delay);
 

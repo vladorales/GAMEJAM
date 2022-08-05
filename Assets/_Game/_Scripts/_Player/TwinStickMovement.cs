@@ -3,11 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(CharacterController))]
 public class TwinStickMovement : MonoBehaviour
 {
     public S_Shoot shoot;
+    public Animator anim;
 	#region Data Types
 	[Header("Player Stats")]
 	[SerializeField] public float playerSpeed = 10f;
@@ -16,6 +18,8 @@ public class TwinStickMovement : MonoBehaviour
 	[SerializeField] private readonly float gravityValue = -9.81f;
 	[SerializeField] private readonly float controllerDeadzone = .1f;
 	[SerializeField] private readonly float RotateSmoothing = 1000f;
+    public Slider HPBAR;
+    public GameObject deadCanv;
 
 	[SerializeField] public AudioSource dodgeSound;
 	private float ogSpeed;
@@ -86,6 +90,7 @@ public class TwinStickMovement : MonoBehaviour
 		MouseInput();
 		DodgeInput();
 		CheckHealth();
+        animSetup();
 		elapsedTime += Time.deltaTime;
 		percentageComplete = elapsedTime / dashDistance;
 		
@@ -126,8 +131,9 @@ public class TwinStickMovement : MonoBehaviour
 		bool isMouseButtonHeld = playerControls.Controls.Shooting.ReadValue<float>() > .1f;
 
 		if (isMouseButtonHeld)
-		{		
-			Shoot();
+		{
+            anim.SetBool("swordATT", true);
+			
 		}
 
         if (Mouse.current.rightButton.isPressed)
@@ -139,18 +145,21 @@ public class TwinStickMovement : MonoBehaviour
             shoot.tripShot = false;
         }
 	}
+    private void animSetup()
+    {
+        if ((Keyboard.current.wKey.isPressed) || (Keyboard.current.sKey.isPressed) || (Keyboard.current.aKey.isPressed) || (Keyboard.current.dKey.isPressed))
+        {
+            anim.SetBool("isRun", true);
+        }
+      
+        else
+        {
+            anim.SetBool("isRun", false);
+        }
+    }
 
-	
 
-	private void Shoot()
-	{
-		if (Time.time >= NextTimetoFire)
-		{
-			NextTimetoFire = Time.time + 1f / fireRate;
-			shoot = GameObject.Find("Gun").GetComponent<S_Shoot>();
-			shoot.Shoot();
-		}
-	}
+
 	IEnumerator DodgeTiming (float delay)
 	{
 		yield return new WaitForSeconds(delay);
@@ -181,7 +190,7 @@ public class TwinStickMovement : MonoBehaviour
 					{
 						Quaternion newRotation = Quaternion.LookRotation(playerDirection, Vector3.up);
 						transform.rotation = Quaternion.RotateTowards(transform.rotation, newRotation, RotateSmoothing * Time.deltaTime);
-						Shoot();
+						
 					}
 				}
 			}
@@ -225,12 +234,21 @@ public class TwinStickMovement : MonoBehaviour
 	{
 		isGamepad = pi.currentControlScheme.Equals("Gamepad") ? true : false;
 	}
-	#endregion
+    #endregion
+
+    public void LoseHealth(float healthLoss)
+    {
+        playerHealth = playerHealth - healthLoss;
+    }
+
 	void CheckHealth()
 	{
+        HPBAR.value = playerHealth;
 		if (playerHealth <= 0)
 		{
-			//Debug.Log("You're Dead");
+            Time.timeScale = 0.1f;
+			Debug.Log("You're Dead");
+            deadCanv.SetActive(true);
 		}
 	}
 

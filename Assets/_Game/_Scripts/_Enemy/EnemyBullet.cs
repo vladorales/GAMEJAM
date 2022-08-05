@@ -18,23 +18,26 @@ public class EnemyBullet : MonoBehaviour
 		Destroy(bullet);
 	}
 	// Update is called once per frame
-	void OnTriggerEnter(Collider collision)
+	void OnTriggerEnter(Collider other)
 	{
 
-		if (collision.gameObject.tag == "Player")
+		if (other.gameObject.tag == "Player")
 		{
-			TwinStickMovement PlayerLife = collision.gameObject.GetComponent<TwinStickMovement>();
-			PlayerLife.playerHealth -= 1;
-			Destroy(gameObject);
+            Debug.Log("hit player");
+            float healthLoss;
+            healthLoss = dmgAmnt;
+			TwinStickMovement PlayerLife = other.gameObject.GetComponent<TwinStickMovement>();
+            PlayerLife.LoseHealth(healthLoss);
+			//Destroy(gameObject);
 		}
-		else if (collision.gameObject.tag == "Wall")
+		else if (other.gameObject.tag == "Wall")
 		{
 			
 			Destroy(gameObject);
 		}
-		else if(collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Big Enemy")
+		else if(other.gameObject.tag == "Enemy" || other.gameObject.tag == "Big Enemy")
 		{
-			Collider friend = collision.gameObject.GetComponent<Collider>();
+			Collider friend = other.gameObject.GetComponent<Collider>();
 
 			Physics.IgnoreCollision(gameObject.GetComponent<Collider>(), friend);
 		}
