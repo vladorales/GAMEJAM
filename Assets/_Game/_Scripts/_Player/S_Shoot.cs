@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(CharacterController))]
 public class S_Shoot : MonoBehaviour
 {
 	[Header("Bullet Stats")]
@@ -23,20 +24,38 @@ public class S_Shoot : MonoBehaviour
     public float fireRate = 1f;
     private float NextTimetoFire = 1f;
 
+    private PlayerControls playerControls;
+	private PlayerInput playerInput;
+
     // Update is called once per frame
+    void Awake()
+    {
+        playerControls = new PlayerControls();
+		playerInput = GetComponent<PlayerInput>();
+    }
+
+    private void OnEnable()
+	{
+		playerControls.Enable();
+	}
+
+	//private void OnDisable()
+	//{
+	//	playerControls.Disable();
+	//}
     void Update()
 	{
         //update bullet count
         //
-        if (Mouse.current.leftButton.wasPressedThisFrame)
-        {
+        
             StartShoot();
-        }
+        
     }
 
     private void StartShoot()
     {
-        if (Time.time >= NextTimetoFire)
+        bool isMouseButtonHeld = playerControls.Controls.Shooting.ReadValue<float>() > .1f;
+        if (Time.time >= NextTimetoFire && isMouseButtonHeld)
         {
             NextTimetoFire = Time.time + 1f / fireRate;
             Shoot();
