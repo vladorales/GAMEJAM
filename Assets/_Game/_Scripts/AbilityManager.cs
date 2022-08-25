@@ -6,34 +6,23 @@ using UnityEngine.InputSystem;
 
 public class AbilityManager : MonoBehaviour
 {
+    [Header("AbilityGen")]
     public int AbilitySelected;
     public GameObject[] Weapons;
-    public TwinStickMovement player;
-    //depreciated, dw about this
-    public enum Abilities
-    {
-        Hack,
-        Sever, 
-        Tank,
-        Launcher
-    }
-    void TankMode()
-    {
-        
-            player.playerSpeed = 3f;
-        
-    }
 
-    void ExitTankMode()
-    {
-        player.playerSpeed = 10f;
-    }
+    [Header("Player")]
+    public TwinStickMovement player;
+    public Renderer playerMesh;
+    public Material[] playerMaterials;
+   
+
+
+   
     // Start is called before the first frame update
     void Start()
     {
         //failsafe so that Hack ability is default: 
         AbilitySelected = 1;
-
     }
     // Update is called once per frame
     void Update()
@@ -44,7 +33,8 @@ public class AbilityManager : MonoBehaviour
             ChangeAbility();
         }
     }
-    //ability change starts a random # generation. #5 is to ensure that all four options have a healthy chance of being picked. then run the ability select switch case.
+    //ability change starts a random # generation. #5 is to ensure that all four
+    //options have a healthy chance of being picked. then run the ability select switch case.
      void ChangeAbility()
     {
             Debug.Log("Randomize...");
@@ -59,11 +49,27 @@ public class AbilityManager : MonoBehaviour
     {
         AbilityGenerate();
     }
+    void TankMode()
+    {
+        //reduces player speed during tank mode
+        player.playerSpeed = 3f;
+    }
+
+    void ExitTankMode()
+    {
+        //returns player speed
+        player.playerSpeed = 10f;
+    }
     //ability modes. "ability selected" int goes in for each case. turns on selected weapon, turns off unselected. 
     void AbilityGenerate()
     {
+
+        int materialGo;
+        materialGo = AbilitySelected;
+        playerMesh.material = playerMaterials[materialGo];
         switch (AbilitySelected)
         {
+
             case 1:
                 Debug.Log("SeverActivate");
                 Weapons[3].SetActive(true);
@@ -71,6 +77,7 @@ public class AbilityManager : MonoBehaviour
                 Weapons[1].SetActive(false);
                 Weapons[2].SetActive(false);
                 ExitTankMode();
+                
                 break;
             case 2:
                 Debug.Log("HackActivate");

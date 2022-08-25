@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 381.87207, g: 629.2684, b: 396.5083, a: 1}
+  m_IndirectSpecularColor: {r: 374.40817, g: 617.1379, b: 388.21362, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5464,6 +5464,12 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: a59c31b5b4810fa41a5db42c2342c995, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d61867aef7a6e94dbe794c3d2133253, type: 3}
+--- !u!137 &1195363403 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 492745126049460028, guid: 6a7f9e6af3209b444b7ac319a593280b,
+    type: 3}
+  m_PrefabInstance: {fileID: 216864256}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1207869761
 GameObject:
   m_ObjectHideFlags: 0
@@ -7717,6 +7723,12 @@ MonoBehaviour:
   - {fileID: 970606463}
   - {fileID: 888307753}
   player: {fileID: 1604073041}
+  playerMesh: {fileID: 1195363403}
+  playerMaterials:
+  - {fileID: 2100000, guid: fe096e44723b09747b43192b38d35129, type: 2}
+  - {fileID: 2100000, guid: 21a1a6bf55637794a96fede80b08d9a0, type: 2}
+  - {fileID: 2100000, guid: 506e12298f7c3a940a17a85210454f1f, type: 2}
+  - {fileID: 2100000, guid: 9f4ec81d0cf4eb347a3218b88d3253f1, type: 2}
 --- !u!114 &1604073041 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9105044451141826010, guid: 3ce95410a26629c4c827a29af5d71fca,
@@ -8427,6 +8439,7 @@ MonoBehaviour:
   tertSpawn: {fileID: 390872055}
   clip: {fileID: 1419915393}
   heavyClip: {fileID: 1235031127}
+  fireRate: 1
 --- !u!1 &1801969837 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4255865459691142015, guid: 3ce95410a26629c4c827a29af5d71fca,
